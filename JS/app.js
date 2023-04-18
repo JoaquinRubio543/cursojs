@@ -7,30 +7,33 @@ if(edad == 1){
 
 let total = 0
 
-Nombre = prompt(`Bienveindo a bebidasTM, ingrese su nombre`);
-edad = Number(prompt(`Ingrese su edad`));
+    Nombre = prompt(`Bienveindo a bebidasTM, ingrese su nombre`);
+    edad = Number(prompt(`Ingrese su edad`));
 
-if(edad < 18){
-    alert(`Acceso denegado`);
-} else if (edad >= 18){
-    alert(`Bienvenido`);
-    let producto= prompt(`Que producto desea adquirir ?`);
-    let precioproducto= prompt(`Indicar el precio del mismo`);
-    let cantidad= prompt("Indicar cantidad");
-    let agregar= Number (prompt(`Desea agregar otro producto ? 1 par SI, 2 para NO`));
+    if(edad < 18){
+        alert(`Acceso denegado`);
+    } else if (edad >= 18){
+        do{
+            let producto= prompt(`Que bebida desea adquirir ?`);
+            let precioproducto= prompt(`Indicar el precio del mismo`);
+            while (precioproducto < 0){
+                alert(`Precio invalido`)
+            }
+            let cantidad= prompt("Indicar cantidad");
+            if (cantidad <= 0){
+                alert(`La cantidad tiene que ser mayo a 1`)
+            }else if (cantidad > 0 ){
+                total = total + precioproducto * cantidad;
+            }
+            agregar= Number (prompt(`Desea agregar otro producto ? 1 par SI, 2 para NO`));
+        }while (agregar == 1) {
+        total = total + precioproducto * cantidad
+        }
+        if(agregar == 2){
+            alert(`Su total sr/sra ${Nombre} es de ${total}`)
+        }
+    }
 
-    while (agregar != 2){
-    let producto= prompt(`Que producto desea adquirir ?`);
-    let precioproducto= prompt(`Indicar el precio del mismo`);
-    let cantidad= prompt(`Indicar cantidad`);
-    let agregar = Number (prompt(`Desea agregar otro producto ? 1 par SI, 2 para NO`));
-    if(agregar ==2){
-        to
-        alert(`Acceso denegado`)
-        break;
-    }
-    }
-}
 
 
 
