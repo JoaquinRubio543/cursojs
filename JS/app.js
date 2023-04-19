@@ -6,34 +6,33 @@ if(edad == 1){
 }*/
 
 let total = 0
+let agregar
 
     Nombre = prompt(`Bienveindo a bebidasTM, ingrese su nombre`);
-    edad = Number(prompt(`Ingrese su edad`));
-
-    if(edad < 18){
-        alert(`Acceso denegado`);
-    } else if (edad >= 18){
-        do{
-            let producto= prompt(`Que bebida desea adquirir ?`);
-            let precioproducto= prompt(`Indicar el precio del mismo`);
-            while (precioproducto < 0){
-                alert(`Precio invalido`)
-            }
-            let cantidad= prompt("Indicar cantidad");
-            if (cantidad <= 0){
-                alert(`La cantidad tiene que ser mayo a 1`)
-            }else if (cantidad > 0 ){
-                total = total + precioproducto * cantidad;
+    do{
+        edad = Number(prompt(`Ingrese su edad`));
+        if(edad < 18){
+            alert(`Acceso denegado`);
+        } else if (edad >= 18){
+                let producto= prompt(`Que bebida desea adquirir ?`);
+                let precioproducto= prompt(`Indicar el precio del mismo`);
+                if (precioproducto < 0){
+                    alert(`Precio invalido`)
+                }else{
+                    let cantidad= prompt("Indicar cantidad");
+                }
+                if (cantidad <= 0){
+                    alert(`La cantidad tiene que ser mayo a 1`)
+                }else{
+                    total = total + precioproducto*cantidad;
+                }
             }
             agregar= Number (prompt(`Desea agregar otro producto ? 1 par SI, 2 para NO`));
-        }while (agregar == 1) {
-        total = total + precioproducto * cantidad
+    } while (agregar == 1) {
+    alert(`Su total, sr/sra ${Nombre} es de ${total}`)
         }
-        if(agregar == 2){
-            alert(`Su total sr/sra ${Nombre} es de ${total}`)
-        }
-    }
 
+// Estuve haciendo varios cambios pero no comprendo porque no se muestra el prompt de agregar despues de el de cantidad
 
 
 
@@ -42,7 +41,7 @@ let total = 0
 Persona2=prompt ("Cuanto dinero tnees Persona2 ?");
 Persona3=prompt ("Cuanto dinero tenes Persona3 ?");
 
-Persona1= parseFloat(dineroCofla);
+Persona1= parseFloat(Persona1);
 
 if(Persona1 >= 1 && Persona1 < 2){
     alert("Comprate el helado de 1.50$ Persona1");
